@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-
         <title>BloomBuddy</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,33 +12,12 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/questionair.css">
 
-        <style>
-            #loading-indicator {
-                display: none;
-                text-align: center;
-                margin-top: 15px;
-                color: #4a5568;
-                font-weight: bold;
-            }
-            .spinner {
-                border: 4px solid #f3f3f3;
-                border-top: 4px solid #48bb78;
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                animation: spin 1s linear infinite;
-                margin: 0 auto 10px auto;
-            }
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        </style>
         <!-- Firebase Authentication -->
         <script src="scripts/auth.js" type="module"></script>
         <script src="scripts/questionair.js" type="module"></script>
     </head>
     <body>
+        <div class="header" style="margin-top: 5rem;"></div>
         <div class="container">
             <h2>Physical Limitations</h2>
             <p>What conditions may limit your ability to exercise? (Select all

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="header" style="margin-top: 5rem;"></div>
+    <a href="questionair.html" class="setup-btn">Set Up</a>
     <h1>Hello, Welcome</h1>
 
     <div class="flower">
@@ -22,21 +24,18 @@
     
 </div>
 
-    <button onclick="changeText()">Generate Excercise</button>
+    <button id="generate-btn">Generate Exercise</button>
+    <div id="loading-indicator">
+        <div class="spinner"></div>
+        <span>Consulting the trainer...</span>
+    </div>
+    <div id="workout-result" style="justify-self: center; margin: 1.5rem; white-space: pre-wrap; max-width: 80%; text-align: left;"></div>
 
-    <script>
-        function changeText() {
-            document.querySelector("p").innerText = "You clicked the button!";
-        }
-    </script>
+    <script src="scripts/index.js" type="module"></script>
 
     <!-- Firebase Authentication -->
     <script src="scripts/auth.js" type="module"></script>
     <script src="scripts/flowerJava.js"></script>
-    <script>
-        saveActivity();
-        setInterval(CheckifDead, 5 * 1000);
-    </script>
 
 </body>
 </html>

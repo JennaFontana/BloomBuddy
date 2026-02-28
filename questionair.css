@@ -1,10 +1,116 @@
-ul{
-    list-style-type: none;
-    justify-items: left;
-}
-.checklist{
+/* 1. Vibrant Spring Background */
+body {
+    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%); /* Energetic Sky Gradient */
+    min-height: 100vh;
+    margin: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* 2. The Pop-Out Card */
+.container {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 4px solid #fff; /* White border to make it pop against the blue */
+}
+
+/* 3. Energetic Typography */
+h1 {
+    color: #2d3748;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0px #f6ad55; /* Sunny drop shadow on text */
+    margin-bottom: 10px;
+}
+
+/* 4. High-Energy Option Cards */
+.option-group {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 18px;
+    cursor: pointer;
+    border: 3px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy feel */
+}
+
+/* 5. Color States - These add the "Energy" */
+.option-group:hover {
+    border-color: #f6ad55; /* Golden Yellow */
+    background: #fffaf0;
+    transform: scale(1.05) rotate(1deg); /* Playful tilt */
+}
+
+/* When the checkbox inside is checked, light the whole box up! */
+.option-group:has(input:checked) {
+    background: #f0fff4;
+    border-color: #48bb78; /* Vibrant Green */
+    box-shadow: 0 0 15px rgba(72, 187, 120, 0.3);
+}
+
+/* 6. The "Other" Text Input */
+input[type="text"] {
+    border: 3px solid #cbd5e0;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 1rem;
+    background: #edf2f7;
+}
+
+input[type="text"]:focus {
+    background: #fff;
+    border-color: #4299e1; /* Electric Blue focus */
+    box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.2);
+}
+
+/* 7. Custom Checkbox Styling */
+.option-group input[type="checkbox"] {
+    /* Hide the default checkbox */
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.option-group label {
+    position: relative;
+    padding-left: 35px; /* Space for the custom checkbox */
+    font-size: 1.1rem;
+    color: #4a5568;
+    user-select: none; /* Prevent text selection on click */
+}
+
+/* The custom checkbox box */
+.option-group label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border: 2px solid #cbd5e0;
+    background: #fff;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* When the checkbox is checked, change the box's background and show the checkmark */
+.option-group input:checked + label::before {
+    background-color: #48bb78;
+    border-color: #48bb78;
+    content: '\2714';
+    color: white;
+    text-align: center;
+    line-height: 22px; /* Vertically center the checkmark */
+}
+
+/* Focus styles for accessibility */
+.option-group input:focus + label::before {
+    box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.2);
 }

@@ -92,4 +92,9 @@ function CheckifDead() {
 }
 
 CheckifDead();
+<<<<<<< HEAD
 
+=======
+saveActivity();
+setInterval(CheckifDead, 5 * 1000);
+>>>>>>> refs/remotes/origin/main

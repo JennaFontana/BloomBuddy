@@ -7,22 +7,16 @@
     --optical-sizing: auto;
     
 }
-<<<<<<< HEAD:style.css
-body {     
-            /* use background shorthand or background-image for gradients */
-            background: linear-gradient(135deg, #74eb9a 0%, #f3ee8c 100%); /* Energetic Sky Gradient */
-            font-family: 'Outfit', sans-serif;
-=======
 body {
             background: linear-gradient(135deg, #74eb9a 0%, #f3ee8c 100%);
             background-attachment: fixed;
             min-height: 100vh;
             margin: 0;
->>>>>>> refs/remotes/origin/main:css/style.css
             text-align: center;
             font-weight: var(--weight);
             font-style: var(--style);
             font-size: var(--optical-sizing);
+            font-family: var(--main-font);
         }
         .flower {
             position: relative; 

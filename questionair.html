@@ -15,16 +15,31 @@
         <script src="gemini.js" type="module"></script>
     </head>
     <body>
-        <div class="checklist">
+        <div class="container">
             <h2>Physical Limitations</h2>
             <p>What conditions may limit your ability to exercise? (Select all that apply)</p>
-            <ul>
-                <li><h3><input type="checkbox" name="Hypertension">Hypertension</input></h3></li>
-                <li><h3><input type="checkbox" name="Obesity">Obesity</input></h3></li>
-                <li><h3><input type="checkbox" name="Diabetes">Diabetes</input></h3></li>
-                <li><h3><input type="checkbox" name="Arthritis/Chronic Pain">Arthritis/Chronic Pain</input></h3></li>
-                <li><h3><input type="checkbox" name="Other">Other</input></h3></li>
-            </ul>
+            
+            <div class="option-group">
+                <input type="checkbox" id="Hypertension" name="Hypertension">
+                <label for="Hypertension">Hypertension</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="Obesity" name="Obesity">
+                <label for="Obesity">Obesity</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="Diabetes" name="Diabetes">
+                <label for="Diabetes">Diabetes</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="Arthritis" name="Arthritis/Chronic Pain">
+                <label for="Arthritis">Arthritis/Chronic Pain</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="other" name="Other">
+                <label for="other">Other</label>
+            </div>
+            <input type="text" id="other-field" placeholder="Other Conditions">
         </div>
     </body>
 </html>

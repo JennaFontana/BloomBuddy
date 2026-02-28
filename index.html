@@ -2,9 +2,6 @@
 <html>
 <head>
     <title>BloomBuddy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,18 +19,22 @@
     
 </div>
 
-    <button onclick="changeText()">Generate Excercise</button>
+    <button id="generateBtn" type="button">Generate Exercise</button>
 
     <script>
-        function changeText() {
-            document.querySelector("p").innerText = "You clicked the button!";
-        }
+        const generateBtn = document.getElementById('generateBtn');
+        generateBtn.addEventListener('click', () => {
+            revive_flower();
+            grow_flower();
+            saveActivity(); 
+            console.log('generate button clicked');
+        });
     </script>
 
     <script src="flowerJava.js"></script>
     <script>
-        saveActivity();
-        setInterval(CheckifDead, 5 * 1000);
+
+        setInterval(CheckifDead, 1 * 1000);
     </script>
 
 </body>

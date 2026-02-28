@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
 :root {
     --main-font: "Chiron GoRound TC", sans-serif;
     --weight: auto;
@@ -5,11 +7,11 @@
     --optical-sizing: auto;
     
 }
-body {
-            background-color: hsl(88, 68%, 89%);
-            font-family: Georgia;
+body {     
+            /* use background shorthand or background-image for gradients */
+            background: linear-gradient(135deg, #74eb9a 0%, #f3ee8c 100%); /* Energetic Sky Gradient */
+            font-family: 'Outfit', sans-serif;
             text-align: center;
-            font-family: var(--main-font);
             font-weight: var(--weight);
             font-style: var(--style);
             font-size: var(--optical-sizing);
@@ -19,14 +21,16 @@ body {
             width: 150px; 
             height: 150px; 
             margin: 20px auto;
+            transform-origin: center center; /* scale from center */
+            transition: transform 300ms ease; /* smooth growth */
         }
         .petal {
-            width: 50px; 
-            height: 50px; 
+            width: 29px; 
+            height: 29px; 
             border-radius: 50%;
             position: absolute; 
 
-            top: 35%;
+            top: 45%;
             left: 50%;
 
             transform-origin: 0 -1px;
@@ -56,33 +60,55 @@ body {
             background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
         }
         .center{ 
-            width: 43px; 
-            height: 43px; 
+            width: 33px; 
+            height: 33px; 
            
             background: radial-gradient(circle at center, gold 60%, orange 100%, transparent 110%);
             border-radius: 50%;
             position: absolute;
             filter: blur(1px); 
 
-            top: 20%;
-            left: 37%;
+            top: 33%;
+            left: 39%;
         }
         .stem {
             width: 10px; 
-            height: 100px; 
+            height: 50px; 
             background: linear-gradient(to top, #6bbf59, #2f7a32);
             position: absolute;
             border-radius: 20%;
-            top: 60px; 
+
+            top: 75px; 
             left: 47%;
         }
 
         h1 {
             color: darkgreen;
+            margin-top: 70px; 
         }
         button {
-            padding: 10px 20px;
-            font-size: 16px;
-        }
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    margin:20px auto 15px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 18px;
+    cursor: pointer;
+    border: 3px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy feel */
+}
+
+
+button:hover {
+    border-color: #f6ad55; /* Golden Yellow */
+    background: #fffaf0;
+    transform: scale(1.05) rotate(1deg); /* Playful tilt */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
 
   

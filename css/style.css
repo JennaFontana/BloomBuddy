@@ -1,0 +1,87 @@
+:root {
+    --main-font: "Chiron GoRound TC", sans-serif;
+    --weight: auto;
+    --style: normal;
+    --optical-sizing: auto;
+    
+}
+body {
+            background: linear-gradient(135deg, #74eb9a 0%, #f3ee8c 100%);
+            text-align: center;
+            font-family: var(--main-font);
+            font-weight: var(--weight);
+            font-style: var(--style);
+            font-size: var(--optical-sizing);
+        }
+        .flower {
+            position: relative; 
+            width: 150px; 
+            height: 150px; 
+            margin: 20px auto;
+        }
+        .petal {
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%;
+            position: absolute; 
+
+            top: 35%;
+            left: 50%;
+
+            transform-origin: 0 -1px;
+        }
+        .p1 {
+           transform : rotate(0deg);
+           background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p2 {
+            transform : rotate(60deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p3 {
+            transform: rotate(120deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p4 {
+            transform: rotate(180deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p5 {
+            transform: rotate(240deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p6 {
+            transform: rotate(300deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .center{ 
+            width: 43px; 
+            height: 43px; 
+           
+            background: radial-gradient(circle at center, gold 60%, orange 100%, transparent 110%);
+            border-radius: 50%;
+            position: absolute;
+            filter: blur(1px); 
+
+            top: 20%;
+            left: 37%;
+        }
+        .stem {
+            width: 10px; 
+            height: 100px; 
+            background: linear-gradient(to top, #6bbf59, #2f7a32);
+            position: absolute;
+            border-radius: 20%;
+            top: 60px; 
+            left: 47%;
+        }
+
+        h1 {
+            color: darkgreen;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+  

@@ -3,11 +3,21 @@
 <head>
     <title>BloomBuddy</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <h1>Hello, Welcome</h1>
-    .petal 
+
+    <div class="flower">
+    <div class="stem"></div>
+    <div class="petal p1"></div>
+    <div class="petal p2"></div>
+    <div class="petal p3"></div>
+    <div class="petal p4"></div>
+    <div class="petal p5"></div>
+    <div class="petal p6"></div>
+    <div class="center"></div>
+    
+</div>
 
     <button onclick="changeText()">Generate Excercise</button>
 
@@ -15,6 +25,12 @@
         function changeText() {
             document.querySelector("p").innerText = "You clicked the button!";
         }
+    </script>
+
+    <script src="flowerJava.js"></script>
+    <script>
+        saveActivity();
+        setInterval(CheckifDead, 5 * 1000);
     </script>
 
 </body>

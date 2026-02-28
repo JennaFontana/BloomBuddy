@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>BloomBuddy</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="questionair.css">
+
+        <script src="questionair.js" defer></script>
+        <script src="gemini.js" type="module"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Physical Limitations</h2>
+            <p>What conditions may limit your ability to exercise? (Select all that apply)</p>
+            
+            <div class="option-group">
+                <input type="checkbox" id="Hypertension" name="Hypertension">
+                <label for="Hypertension">Hypertension</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="Obesity" name="Obesity">
+                <label for="Obesity">Obesity</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="Diabetes" name="Diabetes">
+                <label for="Diabetes">Diabetes</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="Arthritis" name="Arthritis/Chronic Pain">
+                <label for="Arthritis">Arthritis/Chronic Pain</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="other" name="Other">
+                <label for="other">Other</label>
+            </div>
+            <input type="text" id="other-field" placeholder="Other Conditions">
+        </div>
+    </body>
+</html>

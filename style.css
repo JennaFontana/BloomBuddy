@@ -1,7 +1,18 @@
+:root {
+    --main-font: "Chiron GoRound TC", sans-serif;
+    --weight: auto;
+    --style: normal;
+    --optical-sizing: auto;
+    
+}
 body {
             background-color: hsl(88, 68%, 89%);
             font-family: Georgia;
             text-align: center;
+            font-family: var(--main-font);
+            font-weight: var(--weight);
+            font-style: var(--style);
+            font-size: var(--optical-sizing);
         }
         .flower {
             position: relative; 

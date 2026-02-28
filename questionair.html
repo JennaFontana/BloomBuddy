@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+
         <title>BloomBuddy</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap"
+            rel="stylesheet">
 
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/questionair.css">
 
-        <script src="scripts/" defer></script>
-        <script src="scripts/gemini.js" type="module"></script>
+        <style>
+            #loading-indicator {
+                display: none;
+                text-align: center;
+                margin-top: 15px;
+                color: #4a5568;
+                font-weight: bold;
+            }
+            .spinner {
+                border: 4px solid #f3f3f3;
+                border-top: 4px solid #48bb78;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                animation: spin 1s linear infinite;
+                margin: 0 auto 10px auto;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+        <script src="scripts/questionair.js" type="module"></script>
     </head>
     <body>
         <div class="container">
             <h2>Physical Limitations</h2>
-            <p>What conditions may limit your ability to exercise? (Select all that apply)</p>
-            
+            <p>What conditions may limit your ability to exercise? (Select all
+                that apply)</p>
+
             <label class="option-group" for="Hypertension">
                 <input type="checkbox" id="Hypertension" name="Hypertension">
                 <span>Hypertension</span>
@@ -32,7 +56,8 @@
                 <span>Diabetes</span>
             </label>
             <label class="option-group" for="Arthritis">
-                <input type="checkbox" id="Arthritis" name="Arthritis/Chronic Pain">
+                <input type="checkbox" id="Arthritis"
+                    name="Arthritis/Chronic Pain">
                 <span>Arthritis/Chronic Pain</span>
             </label>
             <label class="option-group" for="other">
@@ -41,6 +66,10 @@
             </label>
             <input type="text" id="other-field" placeholder="Other Conditions">
             <button id="save-btn">Save Conditions</button>
+            <div id="loading-indicator">
+                <div class="spinner"></div>
+                <span>Creating your plan...</span>
+            </div>
         </div>
     </body>
 </html>

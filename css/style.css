@@ -7,6 +7,9 @@
 }
 body {
             background: linear-gradient(135deg, #74eb9a 0%, #f3ee8c 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
             text-align: center;
             font-family: var(--main-font);
             font-weight: var(--weight);

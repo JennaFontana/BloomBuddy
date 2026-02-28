@@ -77,7 +77,7 @@ input[type="text"]:focus {
     height: 0;
 }
 
-.option-group label {
+.option-group span {
     position: relative;
     padding-left: 35px; /* Space for the custom checkbox */
     font-size: 1.1rem;
@@ -86,7 +86,7 @@ input[type="text"]:focus {
 }
 
 /* The custom checkbox box */
-.option-group label::before {
+.option-group span::before {
     content: '';
     position: absolute;
     left: 0;
@@ -101,7 +101,7 @@ input[type="text"]:focus {
 }
 
 /* When the checkbox is checked, change the box's background and show the checkmark */
-.option-group input:checked + label::before {
+.option-group input:checked + span::before {
     background-color: #48bb78;
     border-color: #48bb78;
     content: '\2714';
@@ -111,6 +111,6 @@ input[type="text"]:focus {
 }
 
 /* Focus styles for accessibility */
-.option-group input:focus + label::before {
+.option-group input:focus + span::before {
     box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.2);
 }

@@ -1,0 +1,49 @@
+import { auth, db } from "./firebase-config.js";
+import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { get_workout } from "./gemini.js";
+
+const generateBtn = document.getElementById('generate-btn');
+const resultDiv = document.getElementById('workout-result');
+const loadingIndicator = document.getElementById('loading-indicator');
+
+if (generateBtn) {
+    generateBtn.addEventListener('click', async () => {
+        const user = auth.currentUser;
+        if (!user) {
+            alert("Please wait for sign-in...");
+            return;
+        }
+
+        generateBtn.disabled = true;
+        generateBtn.textContent = "Generating...";
+        resultDiv.textContent = "";
+        loadingIndicator.style.display = "block";
+
+        try {
+            const docRef = doc(db, "users", user.uid);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                const conditions = docSnap.data().conditions;
+                const workoutPlan = await get_workout(conditions);
+                resultDiv.textContent = workoutPlan;
+
+                // Clean the response text (remove markdown backticks) before saving
+                const cleanPlan = workoutPlan.replace(/```json|```/g, '').trim();
+
+                // Save the generated plan to Firestore
+                await updateDoc(docRef, { plan: cleanPlan });
+                console.log("Workout plan saved to Firestore.");
+            } else {
+                resultDiv.textContent = "No conditions found. Please click 'Set Up' to configure your profile.";
+            }
+        } catch (error) {
+            console.error("Error generating workout:", error);
+            resultDiv.textContent = "Error generating workout: " + error.message;
+        } finally {
+            generateBtn.disabled = false;
+            generateBtn.textContent = "Generate Exercise";
+            loadingIndicator.style.display = "none";
+        }
+    });
+}

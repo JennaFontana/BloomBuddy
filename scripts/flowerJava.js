@@ -31,3 +31,5 @@ function CheckifDead() {
 }
 
 CheckifDead();
+saveActivity();
+setInterval(CheckifDead, 5 * 1000);

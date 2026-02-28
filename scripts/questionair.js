@@ -1,4 +1,5 @@
-import { get_workout } from "./gemini.js";
+import { db, auth } from "./firebase-config.js";
+import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const other = document.getElementById("other");
 const field = document.getElementById("other-field");
@@ -37,13 +38,26 @@ if (saveBtn) {
         // Show loading state
         if (loadingIndicator) loadingIndicator.style.display = "block";
         saveBtn.disabled = true;
-        saveBtn.textContent = "Generating...";
+        saveBtn.textContent = "Saving...";
 
         try {
-            // Generate workout based on data
-            const workoutPlan = await get_workout(data);
-            console.log("Generated Workout:", workoutPlan);
-            alert('Conditions saved and workout generated!');
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error("User not authenticated. Please wait a moment and try again.");
+            }
+
+            // Create a string of conditions
+            const conditions = Object.keys(data).filter(key => data[key] === true);
+            if (data.otherText) {
+                conditions.push(data.otherText);
+            }
+            const conditionsStr = conditions.join(', ');
+
+            // Save data to Firestore under the user's UID
+            await setDoc(doc(db, "users", user.uid), { conditions: conditionsStr });
+
+            console.log("Conditions saved to Firestore");
+            alert('Conditions saved!');
             window.location.href = 'index.html';
         } finally {
             if (loadingIndicator) loadingIndicator.style.display = "none";

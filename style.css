@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+:root {
+    --main-font: "Chiron GoRound TC", sans-serif;
+    --weight: auto;
+    --style: normal;
+    --optical-sizing: auto;
+    
+}
+body {     
+            /* use background shorthand or background-image for gradients */
+            background: linear-gradient(135deg, #74eb9a 0%, #f3ee8c 100%); /* Energetic Sky Gradient */
+            font-family: 'Outfit', sans-serif;
+            text-align: center;
+            font-weight: var(--weight);
+            font-style: var(--style);
+            font-size: var(--optical-sizing);
+        }
+        .flower {
+            position: relative; 
+            width: 150px; 
+            height: 150px; 
+            margin: 20px auto;
+            transform-origin: center center; /* scale from center */
+            transition: transform 300ms ease; /* smooth growth */
+        }
+        .petal {
+            width: 29px; 
+            height: 29px; 
+            border-radius: 50%;
+            position: absolute; 
+
+            top: 45%;
+            left: 50%;
+
+            transform-origin: 0 -1px;
+        }
+        .p1 {
+           transform : rotate(0deg);
+           background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p2 {
+            transform : rotate(60deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p3 {
+            transform: rotate(120deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p4 {
+            transform: rotate(180deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p5 {
+            transform: rotate(240deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .p6 {
+            transform: rotate(300deg);
+            background: radial-gradient(circle at 20% 20%, #ff9da5, #ff5a7e);
+        }
+        .center{ 
+            width: 33px; 
+            height: 33px; 
+           
+            background: radial-gradient(circle at center, gold 60%, orange 100%, transparent 110%);
+            border-radius: 50%;
+            position: absolute;
+            filter: blur(1px); 
+
+            top: 33%;
+            left: 39%;
+        }
+        .stem {
+            width: 10px; 
+            height: 50px; 
+            background: linear-gradient(to top, #6bbf59, #2f7a32);
+            position: absolute;
+            border-radius: 20%;
+
+            top: 75px; 
+            left: 47%;
+        }
+
+
+@keyframes droop {
+    0% { transform: rotate(0deg) translateY(0); }
+    100% { transform: rotate(90deg) translateY(10px); }
+}
+
+.petal {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+        h1 {
+            color: darkgreen;
+            margin-top: 70px; 
+        }
+        button {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    margin:20px auto 15px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 18px;
+    cursor: pointer;
+    border: 3px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy feel */
+}
+
+
+button:hover {
+    border-color: #f6ad55; /* Golden Yellow */
+    background: #fffaf0;
+    transform: scale(1.05) rotate(1deg); /* Playful tilt */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* seed/animal popup animation */
+.seed-animal {
+    position: absolute;
+    font-size: 24px;
+    transform: translate(-50%, 0) scale(0.5);
+    animation: seedPop 1.2s forwards;
+    pointer-events: none;
+}
+@keyframes seedPop {
+    0% { opacity: 0; transform: translate(-50%, 0) scale(0); }
+    30% { opacity: 1; transform: translate(-50%, -20px) scale(1); }
+    70% { opacity: 1; transform: translate(-50%, -60px) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -100px) scale(0.5); }
+}
+@keyframes reviveGlow {
+  0% { box-shadow: 0 0 0px rgba(255, 180, 220, 0); }
+  50% { box-shadow: 0 0 40px rgba(255, 180, 220, 0.9); }
+  100% { box-shadow: 0 0 0px rgba(255, 180, 220, 0); }
+}
+
+  

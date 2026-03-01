@@ -9,11 +9,20 @@ function saveActivity() {
 function kill_flower () {
     console.log('killing flower');
     document.querySelectorAll('.petal').forEach(petal => {
-        // remove any gradient/image and set plain grey
-        petal.style.background = 'grey';
+        petal.style.background = 'sienna';
     });
-    document.querySelector('.center').style.background = 'darkgrey';
-    document.querySelector('.stem').style.background = 'darkgreen';
+    document.querySelectorAll('.petal').forEach(petal => {
+        petal.style.opacity = '0.9';
+    });
+    
+   
+    document.querySelector('.center').style.background = 'saddlebrown';
+    document.querySelector(".center").style.filter = "blur(2px)";
+    document.querySelector(".center").style.transform = "rotate(10deg) translateY(5px)"; 
+
+    document.querySelector('.stem').style.background = '#5a2e0c';
+
+document.querySelector('.flower').style.transform = "scale(0.8) rotate(-5deg)"; 
 }
     function revive_flower() {
     console.log('reviving flower');
@@ -22,6 +31,8 @@ function kill_flower () {
     });
     document.querySelector('.center').style.background = 'radial-gradient(circle at center, gold 60%, orange 100%, transparent 110%)';
     document.querySelector('.stem').style.background = 'linear-gradient(to top, #6bbf59, #2f7a32)';
+    
+    
 }
 const min_scale = 0.5;      
 const step = 0.2;           
@@ -92,9 +103,5 @@ function CheckifDead() {
 }
 
 CheckifDead();
-<<<<<<< HEAD
 
-=======
-saveActivity();
-setInterval(CheckifDead, 5 * 1000);
->>>>>>> refs/remotes/origin/main
+

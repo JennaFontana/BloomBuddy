@@ -6,12 +6,17 @@ const generateBtn = document.getElementById('generate-btn');
 const resultDiv = document.getElementById('workout-result');
 const loadingIndicator = document.getElementById('loading-indicator');
 
+console.log('index.js loaded');
+console.log('generateBtn element:', generateBtn);
+
 // Logic moved from index.html.
 // Assumes flowerJava.js is loaded globally, making these functions available.
 setInterval(CheckifDead, 1 * 1000);
 
 if (generateBtn) {
+    console.log('attaching click listener to generate button');
     generateBtn.addEventListener('click', async () => {
+        console.log('generate button clicked');
         // Flower animation logic from inline script
         revive_flower();
         grow_flower();

@@ -4,9 +4,13 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;
+    padding: 2rem 0;
     display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 /* 2. The Pop-Out Card */
@@ -16,13 +20,15 @@ body {
     border-radius: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     border: 4px solid #fff; /* White border to make it pop against the blue */
+    width: 90vw;
+    max-width: 600px;
+    box-sizing: border-box;
 }
 
 /* 3. Energetic Typography */
 h1 {
     color: #2d3748;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 0px #f6ad55; /* Sunny drop shadow on text */
     margin-bottom: 10px;
 }
 
@@ -60,12 +66,20 @@ input[type="text"] {
     padding: 15px;
     font-size: 1rem;
     background: #edf2f7;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
 }
 
 input[type="text"]:focus {
     background: #fff;
     border-color: #4299e1; /* Electric Blue focus */
     box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.2);
+}
+
+/* Hide "Other" fields by default */
+#other-goal-field, #other-field {
+    display: none;
 }
 
 /* 7. Custom Checkbox Styling */
@@ -117,8 +131,8 @@ input[type="text"]:focus {
 
 /* 8. Save Button */
 #save-btn {
-    margin-top: 20px;
-    width: 100%;
+    width: 90vw;
+    max-width: 600px;
     background: #48bb78;
     color: white;
     border: none;
@@ -127,6 +141,7 @@ input[type="text"]:focus {
     font-size: 1.2rem;
     cursor: pointer;
     transition: background 0.3s ease;
+    box-sizing: border-box;
 }
 
 #save-btn:hover {

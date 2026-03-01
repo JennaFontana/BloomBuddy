@@ -22,7 +22,7 @@ body {
             position: relative; 
             width: 150px; 
             height: 150px; 
-            margin: 20px auto;
+            margin: 1rem auto;
             transform-origin: center center; /* scale from center */
             transition: transform 300ms ease; /* smooth growth */
         }
@@ -86,7 +86,7 @@ body {
 
         h1 {
             color: darkgreen;
-            margin-top: 70px; 
+            margin-top: 50px; 
         }
         button {
     display: inline-flex;
@@ -108,6 +108,21 @@ button:hover {
     transform: scale(1.05) rotate(1deg); /* Playful tilt */
 }
 
+#generate-btn {
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#generate-btn:hover {
+    background: #38a169;
+    transform: scale(1.05);
+}
+
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -115,14 +130,14 @@ button:hover {
 
         .setup-btn {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 5.25rem;
+            right: 3.5rem;
             background: #48bb78;
             color: white;
             text-decoration: none;
             border-radius: 15px;
             padding: 10px 20px;
-            font-size: 1rem;
+            font-size: 1.5rem;
             cursor: pointer;
             transition: background 0.3s ease;
         }

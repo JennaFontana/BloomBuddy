@@ -6,8 +6,16 @@ const generateBtn = document.getElementById('generate-btn');
 const resultDiv = document.getElementById('workout-result');
 const loadingIndicator = document.getElementById('loading-indicator');
 
+// Logic moved from index.html.
+// Assumes flowerJava.js is loaded globally, making these functions available.
+setInterval(CheckifDead, 1 * 1000);
+
 if (generateBtn) {
     generateBtn.addEventListener('click', async () => {
+        // Flower animation logic from inline script
+        revive_flower();
+        grow_flower();
+        saveActivity();
         const user = auth.currentUser;
         if (!user) {
             alert("Please wait for sign-in...");
@@ -25,14 +33,12 @@ if (generateBtn) {
 
             if (docSnap.exists()) {
                 const conditions = docSnap.data().conditions;
-                const workoutPlan = await get_workout(conditions);
-                resultDiv.textContent = workoutPlan;
-
-                // Clean the response text (remove markdown backticks) before saving
-                const cleanPlan = workoutPlan.replace(/```json|```/g, '').trim();
+                const goals = docSnap.data().goals;
+                const workoutPlan = await get_workout(conditions, goals);
+                resultDiv.innerHTML = workoutPlan;
 
                 // Save the generated plan to Firestore
-                await updateDoc(docRef, { plan: cleanPlan });
+                await updateDoc(docRef, { plan: workoutPlan });
                 console.log("Workout plan saved to Firestore.");
             } else {
                 resultDiv.textContent = "No conditions found. Please click 'Set Up' to configure your profile.";

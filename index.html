@@ -15,50 +15,34 @@
         }
     </style>
 </head>
-<body>
-    <div class="header" style="margin-top: 5rem;"></div>
-    <a href="questionair.html" class="setup-btn">Set Up</a>
-    <h1 style="font-size: 3rem">Bloom Buddy</h1>
-    <h2 style="width: 70vw; justify-self: center;">
-        Your health and wellness companion!<br>
-        Click setup to adjust you constraints and goals.
-    </h2>
+    <body>
+        <div class="header" style="margin-top: 1rem;"></div>
+        <a href="questionair.html" class="setup-btn">Set Up</a>
+        <h1 style="font-size: 2.5rem">Bloom Buddy</h1>
+        <h2 style="width: 70vw; justify-self: center;">
+            Your health and wellness companion!<br>
+            Click setup to adjust you constraints and goals.
+        </h2>
 
-    <div class="flower">
-    <div class="stem"></div>
-    <div class="petal p1"></div>
-    <div class="petal p2"></div>
-    <div class="petal p3"></div>
-    <div class="petal p4"></div>
-    <div class="petal p5"></div>
-    <div class="petal p6"></div>
-    <div class="center"></div>
-    
-</div>
+        <div class="flower">
+            <div class="stem"></div>
+            <div class="petal p1"></div>
+            <div class="petal p2"></div>
+            <div class="petal p3"></div>
+            <div class="petal p4"></div>
+            <div class="petal p5"></div>
+            <div class="petal p6"></div>
+            <div class="center"></div>
+        </div>
+        <button id="generate-btn">Generate Exercise</button>
+        <div id="loading-indicator">
+            <div class="spinner"></div>
+            <span>Generating Plan...</span>
+        </div>
+        <div id="workout-result" style="justify-self: center; margin: 1.5rem; max-width: 80%; text-align: left;"></div>
 
-    <button id="generate-btn">Generate Exercise</button>
-    <div id="loading-indicator">
-        <div class="spinner"></div>
-        <span>Generating Plan...</span>
-    </div>
-    <div id="workout-result" style="justify-self: center; margin: 1.5rem; max-width: 80%; text-align: left;"></div>
-
-    <script src="scripts/index.js" type="module"></script>
-
-    <!-- Firebase Authentication -->
-    <script src="scripts/auth.js" type="module"></script>
-    <script src="scripts/flowerJava.js"></script>
-    <script>
-        setInterval(CheckifDead, 1 * 1000);
-
-        const generateBtn = document.getElementById('generate-btn');
-        generateBtn.addEventListener('click', () => {
-            revive_flower();
-            grow_flower();
-            saveActivity(); 
-            console.log('generate button clicked');
-        });
-    </script>
-
-</body>
+        <script src="scripts/auth.js" type="module"></script>
+        <script src="scripts/flowerJava.js"></script>
+        <script src="scripts/index.js" type="module"></script>
+    </body>
 </html>

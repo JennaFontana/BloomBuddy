@@ -54,7 +54,7 @@ function saveCount(c) {
 let scaleCount = loadCount();
 applyScaleCount(scaleCount);
 
-const shrink_delay = 5000; // ms before a shrink occurs
+const shrink_delay = 60000; // 60ms before a shrink occurs
 let lastClick = null;
 
 function grow_flower() {
@@ -103,5 +103,9 @@ function CheckifDead() {
 }
 
 CheckifDead();
+
+setInterval(CheckifDead, 60 * 1000); // Check every 60 seconds
+
+
 
 

@@ -8,7 +8,7 @@ const loadingIndicator = document.getElementById('loading-indicator');
 
 // Logic moved from index.html.
 // Assumes flowerJava.js is loaded globally, making these functions available.
-setInterval(CheckifDead, 1 * 1000);
+setInterval(CheckifDead, 30 * 1000);
 
 if (generateBtn) {
     generateBtn.addEventListener('click', async () => {

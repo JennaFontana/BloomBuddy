@@ -22,7 +22,7 @@ body {
             position: relative; 
             width: 150px; 
             height: 150px; 
-            margin: 20px auto;
+            margin: 2rem auto;
             transform-origin: center center; /* scale from center */
             transition: transform 300ms ease; /* smooth growth */
         }
@@ -115,14 +115,14 @@ button:hover {
 
         .setup-btn {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 5.25rem;
+            right: 3.5rem;
             background: #48bb78;
             color: white;
             text-decoration: none;
             border-radius: 15px;
             padding: 10px 20px;
-            font-size: 1rem;
+            font-size: 1.5rem;
             cursor: pointer;
             transition: background 0.3s ease;
         }

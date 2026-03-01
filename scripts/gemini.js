@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 
-const API_KEY = "API_KEY";
+const API_KEY = "AIzaSyAh1LoJTTNBprlly1ULTl5fz7V8nu4Nu-c";
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 export async function get_workout(conditionsStr, goalsStr){

@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build with Secret
         env:
-          GEMINI_API_KEY: ${{secrets.GEMINI_API_KEY}}
+          GEMINI_API_KEY: ${{secrets.ALT_GEMINI_API_KEY}}
         run: |
           sed -i "s/INSERT_API_KEY/$ALT_GEMINI_API_KEY/g" scripts/gemini.js
       - name: Setup Pages

@@ -81,8 +81,8 @@ function maybeShrink() {
         }
     }
 }
-// check shrink condition every second
-setInterval(maybeShrink, 30000);
+// check shrink condition frequently so the 30‑second delay works properly
+setInterval(maybeShrink, 1000);
 
 function CheckifDead() {
     console.log('checking if dead');

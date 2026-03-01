@@ -25,14 +25,12 @@ if (generateBtn) {
 
             if (docSnap.exists()) {
                 const conditions = docSnap.data().conditions;
-                const workoutPlan = await get_workout(conditions);
-                resultDiv.textContent = workoutPlan;
-
-                // Clean the response text (remove markdown backticks) before saving
-                const cleanPlan = workoutPlan.replace(/```json|```/g, '').trim();
+                const goals = docSnap.data().goals;
+                const workoutPlan = await get_workout(conditions, goals);
+                resultDiv.innerHTML = workoutPlan;
 
                 // Save the generated plan to Firestore
-                await updateDoc(docRef, { plan: cleanPlan });
+                await updateDoc(docRef, { plan: workoutPlan });
                 console.log("Workout plan saved to Firestore.");
             } else {
                 resultDiv.textContent = "No conditions found. Please click 'Set Up' to configure your profile.";

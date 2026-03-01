@@ -1,25 +1,23 @@
 import { db, auth } from "./firebase-config.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const other = document.getElementById("other");
-const field = document.getElementById("other-field");
 const saveBtn = document.getElementById("save-btn");
 const loadingIndicator = document.getElementById("loading-indicator");
 
-function show_other_input() {
-    if (other.checked) {
-        field.style.display = "block";
-    } else {
-        field.style.display = "none";
+const setupToggle = (checkboxId, fieldId) => {
+    const checkbox = document.getElementById(checkboxId);
+    const field = document.getElementById(fieldId);
+    if (checkbox && field) {
+        const toggle = () => {
+            field.style.display = checkbox.checked ? 'block' : 'none';
+        };
+        checkbox.addEventListener('change', toggle);
+        toggle(); // Set initial state
     }
-}
+};
 
-// Ensure both elements exist before adding event listeners
-if (other && field) {
-    other.addEventListener("change", show_other_input);
-    // Set the initial state when the page loads
-    show_other_input();
-}
+setupToggle('other-goal', 'other-goal-field');
+setupToggle('other', 'other-field');
 
 if (saveBtn) {
     saveBtn.addEventListener("click", async () => {
@@ -31,7 +29,7 @@ if (saveBtn) {
         });
 
         // Save text field value
-        data['otherText'] = field.value;
+        data['otherText'] = document.getElementById("other-field").value;
 
         localStorage.setItem('bloomBuddyConditions', JSON.stringify(data));
         
@@ -53,8 +51,22 @@ if (saveBtn) {
             }
             const conditionsStr = conditions.join(', ');
 
+            // Collect fitness goals
+            const goals = [];
+            document.querySelectorAll('input[name="goal"]:checked').forEach(checkbox => {
+                if (checkbox.value !== 'Other') {
+                    goals.push(checkbox.value);
+                }
+            });
+            const otherGoalCheckbox = document.getElementById('other-goal');
+            const otherGoalInput = document.getElementById('other-goal-field');
+            if (otherGoalCheckbox && otherGoalCheckbox.checked && otherGoalInput.value.trim()) {
+                goals.push(otherGoalInput.value.trim());
+            }
+            const goalsStr = goals.join(', ');
+
             // Save data to Firestore under the user's UID
-            await setDoc(doc(db, "users", user.uid), { conditions: conditionsStr });
+            await setDoc(doc(db, "users", user.uid), { conditions: conditionsStr, goals: goalsStr });
 
             console.log("Conditions saved to Firestore");
             alert('Conditions saved!');

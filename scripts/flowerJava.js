@@ -82,7 +82,7 @@ function maybeShrink() {
     }
 }
 // check shrink condition every second
-setInterval(maybeShrink, 1000);
+setInterval(maybeShrink, 60000);
 
 function CheckifDead() {
     console.log('checking if dead');

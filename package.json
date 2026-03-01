@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@dataconnect/generated": "file:src/dataconnect-generated",
+    "@google/genai": "^1.43.0",
     "firebase": "^12.10.0"
   }
 }
